@@ -29,7 +29,7 @@
 
     #news .list{width: 98%; margin: 0 auto}
     #news .list li{display: block; width: 31.3%; float: left}
-	#top .bg {width: initial; height: initial; min-width: 100%; min-height: 100%}
+    #top .bg {width: initial; height: initial; min-width: 100%; min-height: 100%}
 }
 
 @media screen and (max-width:800px){
@@ -170,12 +170,12 @@
     header .menu{ padding: 50px 10px 10px 10px; margin: 0; background-color: #A6CE39; width: 150px;
         position: absolute; top: 55px; right: -150px; opacity: 0; z-index: 150}
     header .menu li a{color: #fff}
-    header .menu li a:hover{color: #000; border-bottom: none}
-    #close_main_menu{ display: none; width: 19px; height: 19px; background-image: url('../img/close.png'); background-repeat: no-repeat;
+    header .menu li a:hover{color: #000; border-bottom: none;}
+    #close_main_menu{ display: none; width: 19px; height: 19px; background-image: url('/_img/close.png'); background-repeat: no-repeat;
         cursor: pointer; position: absolute; top: 70px; right: 130px; z-index: 202}
     #btn_main_menu{display: block; position: absolute; right: 10px; top: 70px; z-index: 200;
         font-family: 'pf_bulletin_sans_proregular'; font-size: 1.063em; padding-left: 40px;
-        background-image: url('../img/menu_btn.png'); background-repeat: no-repeat }
+        background-image: url('/_img/menu_btn.png'); background-repeat: no-repeat }
     #btn_main_menu span{cursor: pointer}
 
     /* Search form */
@@ -189,14 +189,15 @@
     .near_aside .items_list article, .items_list article{width: 50%}
 
     /* Header */
-    #header_placeholder, header{height: 90px}
-    #btn_main_menu, #close_main_menu{top: 55px}
-    header .menu{top: 40px}
-    #lang{top: 50%; margin-top: -10px}
     #logo{width: 50%; background-size: contain; background-color: #A6CE39; background-position: center center}
     header nav{display: block; width: 50%; float: left; position: relative}
     header nav .part{display: block}
-    #lang{padding-left: 0}
+    header .menu{top: 40px}
+
+    #lang{padding-left: 0; top: 50%; margin-top: -10px}
+
+    #header_placeholder, header{height: 90px}
+    #btn_main_menu, #close_main_menu{top: 55px}
 
     /* Top block (after header) */
     #top .title{display: block; margin-bottom: 5px; font-size: 2.500em}
@@ -217,9 +218,10 @@
     #bigSlider .slideRight{background-position: 100% 0}
 
     /* Collection */
+
     #collection .slider{position: relative; width: 100%; overflow: hidden}
-    #collection .list{position: absolute; overflow: hidden; text-align: left; width: 100%; height: 100%; left: 0; top: 0}
-    #collection .list li{ display: block; float: left; min-height: 100%; margin: 0px; background-color: #fff}
+    #collection .list{position: absolute; width: 100%; height: 100%; left: 0; top: 0;  text-align: left; overflow: hidden;}
+    #collection .list li{ min-height: 100%; margin: 0px; background-color: #fff; display: block; float: left;}
     #collection .list li a{display: block; position: relative; width: 90%; height: 90%; background-color: #000; margin: 5% auto}
     #collection .no_slider{position: relative; width: 100%; height: auto}
     #collection .no_slider li{width: 50%; float: left}
@@ -258,6 +260,7 @@
     #post figure{height: auto}
     #post figure img{max-height: none; position: relative; top: 0; transform: none}
     #post .second{margin-top: 25px}
+    #post .params ul li strong {width: 100%; float: none; display: block;}
     #post .param .name, #post .param .data{width: 100%; float: none}
     #post .param .dot_wrap{display: none}
     #post .btns{text-align: center}
@@ -314,7 +317,6 @@
 
 @media screen and (max-width:320px) {
     #searchPage form input[type=text]{width: 48%}
-
     #top .title{margin-left: 7px}
     #top .content{left: 0}
     #top .content .second .list{margin: 0}
@@ -323,5 +325,5 @@
     #top .content .list li span{display: block; height: 40px; line-height: 40px; padding: 0}
     #top .content a span{margin: 0}
 
-    #fixed_header nav .first{display: none}
+#fixed_header nav .first{display: none}
 }
