@@ -280,6 +280,11 @@ header nav{/*width: 72%; margin-left: 3%;*/width: 700px; height: 100%; float: le
     #post .btns{position: absolute; bottom: 0}
     #post .btn{margin-right: 20px}
 
+    /* Collections */
+    #catalog_wrap #collection .list{text-align: left}
+    #catalog_wrap #collection .list li{width: 24%; margin: 0.5%; margin-left: 1%; margin-right: 0; display: table; float: left; height: auto}
+    #catalog_wrap #collection .list li .img{display: table-cell}
+
 /* Page */
 #page article{margin-bottom: 20px}
 #page p{font-size: 1em; color: #000000}

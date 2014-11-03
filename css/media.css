@@ -93,6 +93,9 @@
         /* Pagination */
         #collection .pagination{margin: 15px 0}
 
+    #catalog_wrap #collection{margin: 0.5%; width: 99%}
+    #catalog_wrap #collection .list li{width: 24%; margin-left: 0.5%; margin-right: 0.5%}
+
     /* News */
     #news .preview{width: 98%; margin: 0 auto; margin-bottom: 30px}
 
@@ -200,7 +203,9 @@
     #btn_main_menu, #close_main_menu{top: 55px}
 
     /* Top block (after header) */
+    #top .content > h1{font-size: 40px}
     #top .title{display: block; margin-bottom: 5px; font-size: 2.500em}
+    #top .content .list li, #top .content .list li a{font-size: 26px}
     #top .content .black{margin: 0; font-size: 1.500em}
     #top .content {left: 10px; width: 100%}
     /*#top .content .list li a{font-size: 1.625em}*/
@@ -218,13 +223,13 @@
     #bigSlider .slideRight{background-position: 100% 0}
 
     /* Collection */
-
     #collection .slider{position: relative; width: 100%; overflow: hidden}
     #collection .list{position: absolute; width: 100%; height: 100%; left: 0; top: 0;  text-align: left; overflow: hidden;}
     #collection .list li{ min-height: 100%; margin: 0px; background-color: #fff; display: block; float: left;}
     #collection .list li a{display: block; position: relative; width: 90%; height: 90%; background-color: #000; margin: 5% auto}
     #collection .no_slider{position: relative; width: 100%; height: auto}
     #collection .no_slider li{width: 50%; float: left}
+    #collection .list li .txt{font-size: 1.625em}
     #collection .no_slider li a{width: 98%; height: 98%; margin: 1%}
     #collection nav{display: block; text-align: center}
     #collection nav .slide_btn{display: inline-block; width: 20px; height: 5px; background-color: #e5e5e5; margin: 0 3px; cursor: pointer}
@@ -232,6 +237,9 @@
         /* Items list */
         #collection_items_list h2{margin-left: 2%}
         #collection_items_list article figure{width: 46%; margin: 2%}
+
+    #catalog_wrap #collection .list li{width: 32%}
+    #collection .list li .img{height: initial}
 
     /* News */
     #news .list{width: 100%; height: auto; overflow: visible}
@@ -325,5 +333,7 @@
     #top .content .list li span{display: block; height: 40px; line-height: 40px; padding: 0}
     #top .content a span{margin: 0}
 
-#fixed_header nav .first{display: none}
+    #catalog_wrap #collection .list li{width: 49%}
+
+    #fixed_header nav .first{display: none}
 }

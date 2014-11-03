@@ -112,8 +112,3 @@ function addLink() {
     },0);
 }
 document.oncopy = addLink;
-
-
-$(window).resize(function(){
-   console.log( $(window).width() );
-});
