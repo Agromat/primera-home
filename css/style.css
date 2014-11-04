@@ -401,7 +401,7 @@ footer .title a:hover, footer a.white_link:hover, footer .list li a:hover { bord
 #benefits article{ width: 100%; margin: 5px auto; display: table}
 #benefits article .icon_wrap{width: 25%; display: table-cell; vertical-align: middle}
 #benefits article .icon{position: relative; width: 210px; height: 50px; padding: 10px 15px;
-    background-color: #7dab00;  background-image: url('/_img/toilet_icon.png'); background-repeat: no-repeat;
+    background-color: #A6CE39;  background-image: url('/_img/toilet_icon.png'); background-repeat: no-repeat;
     background-position: 15px center}
 #benefits article .icon span{color: #ffffff; font-size: 1.250em; text-transform: uppercase; font-family: 'ArialNarrow-Bold';
     display: block; padding-left: 45px}
