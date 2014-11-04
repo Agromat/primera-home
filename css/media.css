@@ -25,11 +25,16 @@
     #global_info{width: 98%; margin: 0 1%}
 
     /* Items list */
-    .items_list article{width: 25%}
+    .items_list article{width: 24.6%}
 
     #news .list{width: 98%; margin: 0 auto}
     #news .list li{display: block; width: 31.3%; float: left}
     #top .bg {width: initial; height: initial; min-width: 100%; min-height: 100%}
+
+    /* Projects */
+    #projects .list{text-align: justify}
+    #projects .list:after{width: 100%; height: 0px; visibility: hidden; overflow: hidden; content: ''; display: inline-block}
+    #projects .list li{float: none; display: inline-block; vertical-align: top; width: 24%; height: auto; overflow: visible}
 }
 
 @media screen and (max-width:800px){
@@ -50,6 +55,11 @@
     /* Language switcher */
     #lang{width: 30%}
     #lang li{margin: 0 6px}
+
+    /* Projects */
+    #projects .list, #projects .list li figure{width: 96%; margin: 0 auto}
+    #projects .list li figure .thumb{height: auto}
+    #projects .list li{width: 32%}
 }
 
 @media screen and (max-width:768px) {
@@ -88,13 +98,12 @@
     #bigSlider{height: 360px}
 
     /* Collection */
-    #collection .list li{width: 23%; height: auto; margin: 1%}
+    #collection .list li{display: block; float: left; width: 24%; height: auto; margin: 0.5%}
     #collection .list li .shadow{border-bottom: 3px solid #ffffff}
         /* Pagination */
         #collection .pagination{margin: 15px 0}
 
     #catalog_wrap #collection{margin: 0.5%; width: 99%}
-    #catalog_wrap #collection .list li{width: 24%; margin-left: 0.5%; margin-right: 0.5%}
 
     /* News */
     #news .preview{width: 98%; margin: 0 auto; margin-bottom: 30px}
@@ -147,15 +156,14 @@
     #where_to_buy article{margin-bottom: 20px; width: 46%}
     #where_to_buy article .id{top: -170px}
 
-    /* Projects */
-    #projects .list, #projects .list li figure{width: 96%; max-height: 78%; margin: 0 auto}
-    #projects .list li{width: 33%; height: 190px}
-
     /* Project */
     #project .post{width: 98%; margin: 0 auto; margin-bottom: 20px}
     #project .post p:first-of-type{margin: 0}
     #project #collection_items_list{width: 98%; margin: 0 auto}
     #project #collection_items_list article{width: 100%}
+
+    /* Items list */
+    .items_list article{width: 24.4%}
 }
 
 @media screen and (max-width:620px){
@@ -189,7 +197,7 @@
 
 @media screen and (max-width:480px) {
     /* Items list */
-    .near_aside .items_list article, .items_list article{width: 50%}
+    .near_aside .items_list article, .items_list article{width: 49%}
 
     /* Header */
     #logo{width: 50%; background-size: contain; background-color: #A6CE39; background-position: center center}
@@ -223,10 +231,10 @@
     #bigSlider .slideRight{background-position: 100% 0}
 
     /* Collection */
-    #collection .slider{position: relative; width: 100%; overflow: hidden}
-    #collection .list{position: absolute; width: 100%; height: 100%; left: 0; top: 0;  text-align: left; overflow: hidden;}
-    #collection .list li{ min-height: 100%; margin: 0px; background-color: #fff; display: block; float: left;}
-    #collection .list li a{display: block; position: relative; width: 90%; height: 90%; background-color: #000; margin: 5% auto}
+    #collection .slider{position: relative; width: 100%}
+    #collection .list{width: 98%; height: 100%; margin: 0 auto; text-align: left}
+    #collection .list li{ width: 49%; min-height: 100%; margin: 0.5%; background-color: #fff; display: block; float: left;}
+    #collection .list li a{display: block; position: relative; background-color: #000}
     #collection .no_slider{position: relative; width: 100%; height: auto}
     #collection .no_slider li{width: 50%; float: left}
     #collection .list li .txt{font-size: 1.625em}
@@ -238,12 +246,12 @@
         #collection_items_list h2{margin-left: 2%}
         #collection_items_list article figure{width: 46%; margin: 2%}
 
-    #catalog_wrap #collection .list li{width: 32%}
+    /*#catalog_wrap #collection .list li{width: 32%}*/
     #collection .list li .img{height: initial}
 
     /* News */
     #news .list{width: 100%; height: auto; overflow: visible}
-    #news .list li{width: 90%; height: 240px; margin: 10px auto; float: none}
+    #news .list li{width: 96%; height: 240px; margin: 10px auto; float: none}
     #news .list li:nth-child(3){display: none}
         /* Preview */
         #news .preview{width: 96%}
@@ -306,7 +314,7 @@
 
     /* Projects */
     #projects p:first-child{margin: 10px 0}
-    #projects .list li{width: 50%; height: 160px}
+    #projects .list li{width: 49%; margin-bottom: 10px}
     #projects .list .title{font-size: 0.875em; padding-left: 0}
 
     /* Project */

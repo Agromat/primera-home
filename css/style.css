@@ -96,10 +96,9 @@ p::-moz-selection{background: #7dab00; color: #ffffff}
     .pagination span, .pagination a:hover{background-color: #7dab00; color: #ffffff}
     /* Items list */
     .items_list{margin: 20px 0}
-    .items_list article{width: 20%; margin-bottom: 20px; float: left; text-align: center}
+    .items_list article{width: 19.4%; margin-bottom: 20px; display: inline-block; vertical-align: top; text-align: center}
     .items_list article figure, .items_list article figcaption{margin: 0; padding: 0}
-    .items_list article figcaption{overflow: hidden; height: 65px;}
-    .items_list article figcaption span.id {display: block;}
+    .items_list article .id {display: block;}
     .items_list article figure{width: 94%; margin: 0 auto}
     .items_list article figure img{width: 100%; height: auto; border: 1px solid #A7A7A7}
     .items_list article a{font-size: 1em; color: #000000; text-decoration: none}
@@ -107,7 +106,7 @@ p::-moz-selection{background: #7dab00; color: #ffffff}
     .items_list article a:hover span.id {text-decoration: none}
     .items_list article a:hover img{border: 1px solid #7dab00}
     .near_aside .items_list{margin: 0}
-    .near_aside .items_list article{width: 25%}
+    .near_aside .items_list article{width: 24%}
 
 /* Header */
 #header_placeholder{width: 100%; height: 136px}
@@ -201,6 +200,11 @@ header nav{/*width: 72%; margin-left: 3%;*/width: 700px; height: 100%; float: le
 #collection nav{display: none}
 #collection .pagination{display: block; margin: 50px auto}
 
+/* Collections */
+#catalog_wrap #collection .list{text-align: left}
+#catalog_wrap #collection .list li{width: 24%; margin: 0.5%; margin-left: 1%; margin-right: 0; display: table; float: left; height: auto}
+#catalog_wrap #collection .list li .img{display: table-cell}
+
 #used_in_project .title{margin-left: 1%; margin-bottom: 10px; text-transform: uppercase; color: #7dab00;
     font-family: 'pf_bulletin_sans_proregular'; font-size: 1.786em }
 
@@ -280,11 +284,6 @@ header nav{/*width: 72%; margin-left: 3%;*/width: 700px; height: 100%; float: le
     #post .btns{position: absolute; bottom: 0}
     #post .btn{margin-right: 20px}
 
-    /* Collections */
-    #catalog_wrap #collection .list{text-align: left}
-    #catalog_wrap #collection .list li{width: 24%; margin: 0.5%; margin-left: 1%; margin-right: 0; display: table; float: left; height: auto}
-    #catalog_wrap #collection .list li .img{display: table-cell}
-
 /* Page */
 #page article{margin-bottom: 20px}
 #page p{font-size: 1em; color: #000000}
@@ -317,7 +316,7 @@ header nav{/*width: 72%; margin-left: 3%;*/width: 700px; height: 100%; float: le
 #projects .list li{position: relative; display: block; float: left; width: 25%; height: 235px; margin-bottom: 5px; overflow: hidden}
 #projects .list li figure{position: relative; height: 100%; max-height: 190px; margin: 1%; padding: 0; width: 98%; background-color: #000;
     background-image: url('/_img/shadow.png'); background-repeat: repeat-x; background-position: bottom center}
-#projects .list li figure .thumb{width: 100%; height: 100%; margin: 0}
+#projects .list li figure .thumb{display: block; width: 100%; height: 100%; margin: 0}
 #projects .list li a{text-decoration: none}
 #projects .list li .title{font-family: 'ArialNarrow-Bold'; color: #7dab00; text-transform: uppercase; margin-top: 5px; padding-left: 10px}
 #projects .list li a:hover .title{text-decoration: underline}
