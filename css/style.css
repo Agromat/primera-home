@@ -372,7 +372,6 @@ footer .title a:hover, footer a.white_link:hover, footer .list li a:hover { bord
 #white_list li{margin-right: 30px}
 #copy{position: absolute; bottom: 20px; left: 60px; color: #000}
 
-
 /* Custom select */
 .azureus_select_wrap, .azureus_select{position: relative; display: inline-block; cursor: pointer; margin: 5px}
 .azureus_select .label{position: relative; min-width: 274px; padding: 8px 12px; background-color: #fff; border: 2px solid #e5e5e5;
