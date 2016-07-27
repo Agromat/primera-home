@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primera</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <!--[if IE]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/azureus_adapt_slider.js"></script>
+    <script src="js/azureus_inline_slider.js"></script>
+    <script src="js/global.js"></script>
+    <script>
+    jQuery(function ($) {
+        // Build main slider
+        var main_slider = new buildAdaptSlider($('#bigSlider .slider'), $('#bigSlider .slideLeft'), $('#bigSlider .slideRight'), 600);
+
+        // Add hover effect to news
+        $( "#news .list li" )
+        .mouseover(function() {
+            $(this).find('img').stop().animate({ opacity: 0.70 });
+        })
+        .mouseout(function() {
+            $(this).find('img').stop().animate({ opacity: 1 });
+        });
+
+        var collection_slider;
+        var coll_nav = '';
+        for(var i = 0; i < $('#collection .list li').length; i += 2){
+            coll_nav += '<div class="slide_btn"></div>';
+        }
+
+        function updateInlineSlider(){
+            if($(window).width() <= 480){
+                // Setup collection slide width
+                $('#collection .list li').width( Math.round($('#collection .slider').width() / 2 ) );
+
+                // Build slider
+                if($('#collection .slider_nav').length == 0){
+                    $('#collection').append('<nav class="slider_nav">'+coll_nav+'</nav>');
+                }
+
+                $('#collection .list').unbind();
+                $('#collection .slider_nav .slide_btn').unbind();
+                $('#collection .list li').unbind();
+                //$('#collection .list li').removeClass('unselectable');
+               // $('#collection .list li').addClass('unselectable');
+
+                collection_slider = new azureusInlineSlider($('#collection .list'), $('#collection .list li'), null, null, 500, 2, $('#collection nav'));
+            }else if($(window).width() <= 640){
+                $('#collection .slider_nav').remove();
+                $('#collection .list').css({
+                    "width" : '100%',
+                    "left" : "0"
+                });
+
+                $('#collection .list li').css({
+                    "width" : '23%',
+                    "height" : 'auto'
+                });
+            }else{
+                $('#collection .slider_nav').remove();
+                $('#collection .list').css({
+                    "width" : '100%',
+                    "left" : "0"
+                });
+
+                $('#collection .list li').css({
+                    "width" : '190px',
+                    "height" : '250px'
+                });
+            }
+        }
+
+        $(window).resize(updateInlineSlider);
+        updateInlineSlider();
+    });
+    </script>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header_placeholder"></div>
+<header>
+    <div class="wrapper">
+        <a id="logo" href="#"></a>
+        <nav>
+            <div class="part first">
+                <!-- Language switcher -->
+                <ul id="lang" class="vertical_align">
+                    <li class="current">рус</li>
+                    <li><a href="#">it</a></li>
+                    <li><a href="#">eng</a></li>
+                </ul>
+
+                <!-- Search form -->
+                <form class="searchForm vertical_align" method="post" action="#">
+                    <input type="text" name="s" placeholder="Поиск" maxlength="40" />
+                    <button><img src="img/zoom.png" width="15" height="15" /></button>
+                </form>
+            </div>
+            <div class="part second">
+                <ul class="menu">
+                    <li class="current"><a href="#">Каталог</a></li>
+                    <li><a href="#">преимущества</a></li>
+                    <li><a href="#">проекты</a></li>
+                    <li><a href="#">где купить</a></li>
+                    <li><a href="#">скачать</a></li>
+                    <li><a href="#">о компании</a></li>
+                </ul>
+                <div id="close_main_menu"></div>
+                <div id="btn_main_menu"><span>МЕНЮ</span></div>
+            </div>
+        </nav>
+        <div class="clean"></div>
+    </div>
+</header>
+<!-- Header -->
+
+<!-- Big slider -->
+<section id="bigSlider">
+    <ul class="slider unselectable">
+        <li class="current">
+            <img src="img/main_slider/1.jpg" class="vertical_align" />
+
+            <a href="#">
+            <div class="txt">
+                <span>коллекция 2014</span><br />
+                <span class="name">aurora</span>
+            </div>
+            </a>
+        </li>
+        <li>
+            <img src="img/main_slider/2.jpg" class="vertical_align" />
+
+            <a href="#">
+                <div class="txt">
+                    <span>коллекция 2014</span><br />
+                    <span class="name">aurora</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <img src="img/main_slider/3.jpg" class="vertical_align" />
+
+            <a href="#">
+                <div class="txt">
+                    <span>коллекция 2014</span><br />
+                    <span class="name">aurora</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <img src="img/main_slider/4.jpg" class="vertical_align" />
+
+            <a href="#">
+                <div class="txt">
+                    <span>коллекция 2014</span><br />
+                    <span class="name">aurora</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <button class="slideLeft"></button>
+    <button class="slideRight"></button>
+    <div class="clean"></div>
+</section>
+<!-- Big slider -->
+
+<!-- Search form -->
+<div class="wrapper">
+    <form id="secondSearchForm" class="searchForm" method="post" action="#">
+        <input type="text" name="s" placeholder="Поиск" maxlength="40" />
+        <button><img src="img/zoom.png" width="15" height="15" /></button>
+    </form>
+</div>
+
+<!-- Collections -->
+<div class="h_wrap"><h3>Коллекции</h3></div>
+<section id="collection" class="wrapper">
+    <div class="slider">
+        <ul class="list unselectable">
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Mito</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Tempo</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Taho</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Soft</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Arena</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Mito</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Tempo</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Taho</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="img" src="img/ex_collection_icon.jpg" />
+                    <div class="shadow"></div>
+                    <div class="txt">Soft</div>
+                </a>
+            </li>
+        </ul>
+        <div class="clean"></div>
+    </div>
+</section>
+<!-- Collections -->
+
+<!-- News -->
+<br /><div class="h_wrap"><h3>Новости</h3></div>
+<section id="news" class="wrapper">
+    <ul class="list">
+        <li>
+            <a href="#">
+                <img src="img/ex_news_icon.jpg" />
+                <div class="shadow"></div>
+                <div class="txt">
+                    <b>ДУХ ВРЕМЕНИ: POMPEYA ОТ DUAL GRES</b><br /><br />
+                    Серия керамической плитки Pompeya от
+                    Dual Gres воссоздаст атмосферу
+                    старинных интерьеро
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="img/ex_news_icon.jpg" />
+                <div class="shadow"></div>
+                <div class="txt">
+                    <b>ДУХ ВРЕМЕНИ: POMPEYA ОТ DUAL GRES</b><br /><br />
+                    Серия керамической плитки Pompeya от
+                    Dual Gres воссоздаст атмосферу
+                    старинных интерьеро
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="img/ex_news_icon.jpg" />
+                <div class="shadow"></div>
+                <div class="txt">
+                    <b>ДУХ ВРЕМЕНИ: POMPEYA ОТ DUAL GRES</b><br /><br />
+                    Серия керамической плитки Pompeya от
+                    Dual Gres воссоздаст атмосферу
+                    старинных интерьеро
+                </div>
+            </a>
+        </li>
+    </ul>
+    <div class="clean"></div>
+</section>
+<!-- News -->
+
+<!-- Global info block -->
+<article id="global_info" class="wrapper">
+    <p>Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание направлений прогрессивного развития. Идейные соображения высшего порядка, а также консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт новая модель организационной деятельности требуют определения и уточнения систем массового участия. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание форм развития.</p>
+    <p>Повседневная практика показывает, что новая модель организационной деятельности в значительной степени обуславливает создание систем массового участия. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании модели развития. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт новая модель организационной деятельности в значительной степени обуславливает создание систем массового участия. Товарищи! рамки и место обучения кадров требуют от нас анализа сист
+</article>
+<!-- Global info block -->
+
+<!-- Footer -->
+<footer>
+    <div class="wrapper">
+        <div class="content">
+        <div><a href="#" class="white_power">каталог</a></div>
+
+        <div class="title"><a href="#">Коллекции</a></div>
+        <ul class="list">
+            <li><a href="#">Aurora</a></li>
+            <li><a href="#">Charlestone</a></li>
+            <li><a href="#">Comfort</a></li>
+            <li><a href="#">Country</a></li>
+            <li><a href="#">Fresh</a></li>
+            <li><a href="#">Graphi</a></li>
+            <li><a href="#">Aurora</a></li>
+            <li><a href="#">Charlestone</a></li>
+            <li><a href="#">Aurora</a></li>
+            <li><a href="#">Charlestone</a></li>
+            <li><a href="#">Comfort</a></li>
+            <li><a href="#">Country</a></li>
+            <li><a href="#">Fresh</a></li>
+            <li><a href="#">Graphi</a></li>
+            <li><a href="#">Country</a></li>
+        </ul>
+        <div class="clean"></div>
+
+        <div class="title"><a href="#">Типы товара</a></div>
+        <ul class="list">
+            <li><a href="#">Унитазы и биде </a></li>
+            <li><a href="#">Ванны</a></li>
+            <li><a href="#">Смесители</a></li>
+            <li><a href="#">Душевые кабины</a></li>
+            <li><a href="#">Мебель для ванной комнаты</a></li>
+            <li><a href="#">Душевая программа</a></li>
+            <li><a href="#">Раковины</a></li>
+            <li><a href="#">Паровые боксы</a></li>
+            <li><a href="#">Аксессуары</a></li>
+            <li><a href="#">Сифоны</a></li>
+            <li><a href="#">Уриналы</a></li>
+        </ul>
+        <div class="clean"></div>
+
+        <div class="title"><a href="#" class="white_power">о компании</a></div>
+        <ul class="list">
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Пресса о нас</a></li>
+            <li><a href="#">Сотрудничество</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="clean"></div>
+
+        <ul id="white_list" class="list">
+            <li><a href="#" class="white_power">преимущества</a></li>
+            <li><a href="#" class="white_power">проекты</a></li>
+            <li><a href="#" class="white_power">где купить</a></li>
+            <li><a href="#" class="white_power">скачать</a></li>
+        </ul>
+        <div class="clean"></div>
+
+        <div id="copy">
+            © Primera, 2014<br />
+            При копировании материалов ссылка на сайт обязательна
+        </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+</body>
+</html>
